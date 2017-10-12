@@ -8,7 +8,7 @@ public class NLS {
 	private static ResourceBundle messages;
 
 	static {
-		load(new Locale("en", "US"));
+		load(new Locale("zh", "CN"));
 	}
 
 	private NLS() {

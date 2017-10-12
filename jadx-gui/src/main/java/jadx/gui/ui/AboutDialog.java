@@ -31,16 +31,20 @@ class AboutDialog extends JDialog {
 		name.setFont(font);
 		name.setAlignmentX(0.5f);
 
-		JLabel desc = new JLabel("Dex to Java decompiler");
+		JLabel desc = new JLabel("反编译dex到java");
 		desc.setFont(font);
 		desc.setAlignmentX(0.5f);
 
-		JLabel version = new JLabel("version: " + JadxDecompiler.getVersion());
+		JLabel version = new JLabel("版本号: " + JadxDecompiler.getVersion());
 		version.setFont(font);
 		version.setAlignmentX(0.5f);
 
+		JLabel email = new JLabel("email: 717219917@qq.com");
+		email.setFont(font);
+		email.setAlignmentX(0.5f);
+
 		JPanel textPane = new JPanel();
-		textPane.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
+		textPane.setBorder(BorderFactory.createEmptyBorder(80, 80, 80, 80));
 		textPane.setLayout(new BoxLayout(textPane, BoxLayout.PAGE_AXIS));
 		textPane.add(Box.createRigidArea(new Dimension(0, 10)));
 		textPane.add(name);
@@ -48,6 +52,8 @@ class AboutDialog extends JDialog {
 		textPane.add(desc);
 		textPane.add(Box.createRigidArea(new Dimension(0, 10)));
 		textPane.add(version);
+		textPane.add(Box.createRigidArea(new Dimension(0, 20)));
+		textPane.add(email);
 		textPane.add(Box.createRigidArea(new Dimension(0, 20)));
 
 		JButton close = new JButton(NLS.str("tabs.close"));
@@ -64,7 +70,7 @@ class AboutDialog extends JDialog {
 
 		setModalityType(ModalityType.APPLICATION_MODAL);
 
-		setTitle("About JADX");
+		setTitle("关于jadx");
 		pack();
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setLocationRelativeTo(null);

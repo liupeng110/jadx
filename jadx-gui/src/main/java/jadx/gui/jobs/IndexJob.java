@@ -69,6 +69,6 @@ public class IndexJob extends BackgroundJob {
 
 	@Override
 	public String getInfoString() {
-		return "Indexing: ";
+		return "Ыїв§жа: ";
 	}
 }

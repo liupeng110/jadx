@@ -81,7 +81,7 @@ import static javax.swing.KeyStroke.getKeyStroke;
 public class MainWindow extends JFrame {
 	private static final Logger LOG = LoggerFactory.getLogger(MainWindow.class);
 
-	private static final String DEFAULT_TITLE = "jadx-gui";
+	private static final String DEFAULT_TITLE = "jadx-修改版";
 
 	private static final double BORDER_RATIO = 0.15;
 	private static final double WINDOW_RATIO = 1 - BORDER_RATIO * 2;
@@ -171,8 +171,8 @@ public class MainWindow extends JFrame {
 	public void openFile() {
 		JFileChooser fileChooser = new JFileChooser();
 		fileChooser.setAcceptAllFileFilterUsed(true);
-		String[] exts = {"apk", "dex", "jar", "class", "zip", "aar"};
-		String description = "supported files: " + Arrays.toString(exts).replace('[', '(').replace(']', ')');
+		String[] exts = {"apk", "dex", "jar", "class", "zip", "aar", "rar"};
+		String description = "支持格式: " + Arrays.toString(exts).replace('[', '(').replace(']', ')');
 		fileChooser.setFileFilter(new FileNameExtensionFilter(description, exts));
 		fileChooser.setToolTipText(NLS.str("file.open"));
 		String currentDirectory = settings.getLastOpenFilePath();

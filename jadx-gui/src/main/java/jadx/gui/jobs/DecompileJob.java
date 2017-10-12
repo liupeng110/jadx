@@ -22,7 +22,7 @@ public class DecompileJob extends BackgroundJob {
 
 	@Override
 	public String getInfoString() {
-		return "Decompiling: ";
+		return "∑¥±‡“Î÷–: ";
 	}
 
 }

@@ -112,7 +112,7 @@ public class ClassGen {
 			return;
 		}
 		if (cls.contains(AFlag.INCONSISTENT_CODE)) {
-			code.startLine("// jadx: inconsistent code");
+			code.startLine("// jadx: 不一致的代码");
 		}
 		addClassDeclaration(code);
 		addClassBody(code);
@@ -265,7 +265,7 @@ public class ClassGen {
 				addMethod(code, mth);
 			} catch (Exception e) {
 				code.newLine().add("/*");
-				code.newLine().add(ErrorsCounter.methodError(mth, "Method generation error", e));
+				code.newLine().add(ErrorsCounter.methodError(mth, "方法产生误差:", e));
 				code.newLine().add(Utils.getStackTrace(e));
 				code.newLine().add("*/");
 			}
@@ -302,8 +302,8 @@ public class ClassGen {
 		} else {
 			boolean badCode = mth.contains(AFlag.INCONSISTENT_CODE);
 			if (badCode) {
-				code.startLine("/* JADX WARNING: inconsistent code. */");
-				code.startLine("/* Code decompiled incorrectly, please refer to instructions dump. */");
+				code.startLine("/* JADX err: Inconsistent code. */");
+//				code.startLine("/* error  Inconsistent code*/");
 				ErrorsCounter.methodError(mth, "Inconsistent code");
 				if (showInconsistentCode) {
 					mth.remove(AFlag.INCONSISTENT_CODE);
@@ -416,7 +416,7 @@ public class ClassGen {
 		try {
 			insnGen.makeInsn(insn, code, InsnGen.Flags.BODY_ONLY_NOWRAP);
 		} catch (Exception e) {
-			ErrorsCounter.classError(cls, "Failed to generate init code", e);
+			ErrorsCounter.classError(cls, "生成init代码失败", e);
 		}
 	}
 
@@ -580,7 +580,7 @@ public class ClassGen {
 	private void insertSourceFileInfo(CodeWriter code, AttrNode node) {
 		SourceFileAttr sourceFileAttr = node.get(AType.SOURCE_FILE);
 		if (sourceFileAttr != null) {
-			code.startLine("/* compiled from: ").add(sourceFileAttr.getFileName()).add(" */");
+			code.startLine("/* ").add(sourceFileAttr.getFileName()).add(" */");
 		}
 	}
 
@@ -588,7 +588,7 @@ public class ClassGen {
 		ClassInfo classInfo = cls.getClassInfo();
 		if (classInfo.isRenamed()
 				&& !cls.getShortName().equals(cls.getAlias().getShortName())) {
-			code.startLine("/* renamed from: ").add(classInfo.getFullName()).add(" */");
+			code.startLine("/* ").add(classInfo.getFullName()).add(" */");
 		}
 	}
 
