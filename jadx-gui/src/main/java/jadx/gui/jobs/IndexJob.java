@@ -55,7 +55,7 @@ public class IndexJob extends BackgroundJob {
 				}
 			});
 		}
-	}
+	}   
 
 	@NotNull
 	protected List<StringRef> splitLines(JavaClass cls) {
