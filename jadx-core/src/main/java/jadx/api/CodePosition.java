@@ -3,7 +3,7 @@ package jadx.api;
 public final class CodePosition {
 
 	private final JavaNode node;
-	private final int line;     //行数
+	private final int line;     //行数 
 	private final int offset; //偏移量
 
 	public CodePosition(JavaNode node, int line, int offset) {
