@@ -1,10 +1,10 @@
 package jadx.api;
-
+/**代码位置封装类*/
 public final class CodePosition {
 
 	private final JavaNode node;
-	private final int line;
-	private final int offset;
+	private final int line;     //行数
+	private final int offset; //偏移量
 
 	public CodePosition(JavaNode node, int line, int offset) {
 		this.node = node;

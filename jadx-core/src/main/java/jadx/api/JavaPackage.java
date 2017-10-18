@@ -18,9 +18,7 @@ public final class JavaPackage implements JavaNode, Comparable<JavaPackage> {
 		return name;
 	}
 
-	@Override
-	public String getFullName() {
-		// TODO: store full package name
+	@Override public String getFullName() { // TODO: store full package name
 		return name;
 	}
 
@@ -28,8 +26,7 @@ public final class JavaPackage implements JavaNode, Comparable<JavaPackage> {
 		return classes;
 	}
 
-	@Override
-	public JavaClass getDeclaringClass() {
+	@Override public JavaClass getDeclaringClass() {
 		return null;
 	}
 
