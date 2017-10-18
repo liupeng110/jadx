@@ -91,3 +91,10 @@ Also I need to **prioritize** these task for complete most important at first.
 *Licensed under the Apache 2.0 License*
 
 *Copyright 2016 by Skylot*
+
+
+//1.汉化
+//2.代码添加中文注释...
+
+
+
